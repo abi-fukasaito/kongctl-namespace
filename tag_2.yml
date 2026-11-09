@@ -1,0 +1,6 @@
+control_planes:
+  - ref: cp1
+    name: "default-cp1"
+    _deck:
+      files:
+        - "gateway/change-tag.yml"    # 設定変更用

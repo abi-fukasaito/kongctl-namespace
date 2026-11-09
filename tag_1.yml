@@ -1,0 +1,6 @@
+control_planes:
+  - ref: cp1
+    name: "default-cp1"
+    _deck:
+      files:
+        - "gateway/tag.yml"    # 初期設定用

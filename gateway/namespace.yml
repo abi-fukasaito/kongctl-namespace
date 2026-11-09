@@ -1,0 +1,21 @@
+_format_version: "3.0"
+_info:
+  select_tags:
+    - fuka-test
+
+plugins:
+  - name: key-auth
+    tags:
+      - fuka-test
+
+services:
+  - name: test-service1
+    url: https://backend.internal-1
+    tags:
+      - fuka-test
+    routes:
+      - name: test-route1
+        paths:
+          - /route1
+        tags:
+          - fuka-test

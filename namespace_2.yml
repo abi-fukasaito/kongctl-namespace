@@ -1,0 +1,12 @@
+control_planes:
+  - ref: cp1
+    name: "default-cp1"
+    _deck:
+      files:
+        - "gateway/change-namespace.yml"    # 設定変更用
+      flags:
+        - "--select-tag=fuka-test"
+
+# kongctlがnamespaceを自動でdefaultに設定しているため、fuka-test-cpの記述は無いが消えることはない
+# しかしdefault-cp2は、記述がないため消える。
+# 設定変更はdefault-cp1にのみ適用され、fuka-test-cpの設定に変化はない

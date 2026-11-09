@@ -1,0 +1,33 @@
+_defaults:
+  kongctl:
+    namespace: default
+
+control_planes:
+  - ref: cp1 
+    name: "default-cp1"                # defaultに作成されるCP
+    _deck:
+      files:
+        - "gateway/namespace.yml"      # 初期設定
+      flags:
+        - "--select-tag=fuka-test"
+    kongctl:
+      namespace: default
+
+  - ref: cp2
+    name: "fuka-test-cp"               # fuka-testに作成されるCP
+    _deck:
+      files:
+        - "gateway/namespace.yml"      # 初期設定
+      flags:
+        - "--select-tag=fuka-test"
+    kongctl:
+      namespace: fuka-test
+  
+  - ref: cp3
+    name: "default-cp2"                # defaultに作成され、後で消えるCP
+    _deck:
+      files:
+        - "gateway/namespace.yml"      # 初期設定
+      flags:
+        - "--select-tag=fuka-test"
+    # タグの設定は明示的には行わない⇒defaultに設定される
